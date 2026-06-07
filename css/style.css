@@ -1,0 +1,521 @@
+/* ==========================================================================
+   1. REGLAS GENERALES Y RESETEO
+   ========================================================================== */
+
+/* El reseteo universal asegura que los márgenes y paddings se comporten uniformemente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración de la base tipográfica y desplazamiento suave de la página */
+html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    color: #3A3D40; /* Color secundario medio para texto general */
+}
+
+body {
+    background-color: #FFFFFF; /* Color claro 2 */
+    line-height: 1.6;
+}
+
+/* Contenedor global para limitar el ancho máximo de la interfaz y centrarla */
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Espaciado vertical genérico y generoso para separar visualmente las secciones */
+section {
+    padding: 80px 0;
+}
+
+/* Estilo estandarizado para los títulos principales de cada sección */
+.titulo-seccion {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1E1E24; /* Color principal oscuro */
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.texto-centrado {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. HEADER Y NAVEGACIÓN
+   ========================================================================== */
+
+/* Header con color fijo de fondo oscuro para denotar seriedad estructural */
+.sitio-header {
+    background-color: #1E1E24; /* Color principal oscuro */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Flexbox alinea el logo a la izquierda y el menú a la derecha */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Contenedor del logo con dimensiones explícitas según requerimiento */
+.logo-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #FF5A5F; /* Color de acento llamativo */
+    color: #FFFFFF; /* Color claro 2 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+/* Navegación horizontal con espaciado entre los enlaces internos */
+.navegacion-principal a {
+    color: #FFFFFF; /* Color claro 2 */
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.3s ease; /* Transición suave para el estado Hover */
+}
+
+/* Efecto hover interactivo para la navegación */
+.navegacion-principal a:hover {
+    color: #FF5A5F; /* Color de acento llamativo */
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO
+   ========================================================================== */
+
+/* Fondo claro para la sección de bienvenida */
+.seccion-hero {
+    background-color: #FFFFFF; /* Color claro 2 */
+    padding: 100px 0;
+}
+
+/* Flexbox divide el espacio en dos partes iguales para texto y fotografía */
+.hero-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Ajuste proporcional de la columna de texto de presentación */
+.hero-texto {
+    flex: 1;
+}
+
+.hero-texto h1 {
+    font-size: 3rem;
+    color: #1E1E24; /* Color principal oscuro */
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.hero-texto h2 {
+    font-size: 1.5rem;
+    color: #FF5A5F; /* Color de acento llamativo */
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero-texto p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #3A3D40; /* Color secundario medio */
+}
+
+/* Estilo del botón interactivo principal */
+.boton-acento {
+    display: inline-block;
+    background-color: #FF5A5F; /* Color de acento llamativo */
+    color: #FFFFFF; /* Color claro 2 */
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(255, 90, 95, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-acento:hover {
+    background-color: #1E1E24; /* Cambia a color principal oscuro */
+    transform: translateY(-2px); /* Efecto de elevación sutil */
+}
+
+/* Alineación e impacto visual de la columna gráfica de perfil */
+.hero-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Recorte circular perfecto para la imagen del autor */
+.foto-perfil {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #F5F7FA; /* Color claro 1 actua como marco */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   4. SECCIÓN SOBRE MÍ
+   ========================================================================== */
+
+/* Alternancia de color de fondo a un tono gris sutil para marcar división estructural */
+.seccion-sobre-mi {
+    background-color: #F5F7FA; /* Color claro 1 */
+}
+
+/* ==========================================================================
+   5. SECCIÓN MIS PROYECTOS
+   ========================================================================== */
+
+/* Alternancia de color de fondo a blanco puro */
+.seccion-proyectos {
+    background-color: #FFFFFF; /* Color claro 2 */
+}
+
+/* Distribución horizontal alineada para exactamente tres tarjetas en fila */
+.proyectos-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Estructuración individual y efectos visuales de elevación para las tarjetas de proyectos */
+.tarjeta-proyecto {
+    background-color: #F5F7FA; /* Color claro 1 contrastando con el fondo de sección */
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-proyecto img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Contenedor interno de textos dentro de la tarjeta de proyectos */
+.tarjeta-contenido {
+    padding: 25px;
+}
+
+.tarjeta-contenido h4 {
+    font-size: 1.3rem;
+    color: #1E1E24; /* Color principal oscuro */
+    margin-bottom: 10px;
+}
+
+.tarjeta-contenido p {
+    font-size: 0.95rem;
+    color: #3A3D40; /* Color secundario medio */
+}
+
+/* Efecto hover que dota de dinamismo interactivo a la cuadrícula de trabajos */
+.tarjeta-proyecto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   6. SECCIÓN HABILIDADES
+   ========================================================================== */
+
+/* Alternancia de color a un tono gris sutil */
+.seccion-habilidades {
+    background-color: #F5F7FA; /* Color claro 1 */
+}
+
+/* Distribución horizontal equidistante para exactamente cuatro tarjetas en fila */
+.habilidades-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Estilo minimalista para contenedores de habilidades técnicas individuales */
+.tarjeta-habilidad {
+    background-color: #FFFFFF; /* Color claro 2 para resaltar sobre el fondo claro 1 */
+    flex: 1;
+    text-align: center;
+    padding: 25px 15px;
+    font-weight: 600;
+    color: #1E1E24; /* Color principal oscuro */
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Inversión cromática fluida al posicionar el cursor sobre la habilidad */
+.tarjeta-habilidad:hover {
+    background-color: #FF5A5F; /* Color de acento llamativo */
+    color: #FFFFFF; /* Color claro 2 */
+}
+
+/* ==========================================================================
+   7. SECCIÓN CONTACTO
+   ========================================================================== */
+
+/* Fondo blanco para aislar el módulo de conversión y contacto */
+.seccion-contacto {
+    background-color: #FFFFFF; /* Color claro 2 */
+}
+
+/* Flexbox para equilibrar la propuesta comercial con el mecanismo de captura */
+.contacto-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+/* Configuración tipográfica de la llamada a la acción */
+.contacto-info {
+    flex: 1;
+}
+
+.contacto-info h3 {
+    font-size: 2.5rem;
+    color: #1E1E24; /* Color principal oscuro */
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.contacto-info p {
+    font-size: 1.1rem;
+    color: #3A3D40; /* Color secundario medio */
+}
+
+/* Estructuración técnica y visual del formulario de contacto */
+.contacto-formulario {
+    flex: 1;
+    background-color: #F5F7FA; /* Color claro 1 para encapsular el formulario */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+/* Espaciado sistemático por bloque de entrada */
+.campo-formulario {
+    margin-bottom: 20px;
+}
+
+/* Etiquetas de formulario en bloque sobre el input para optimizar usabilidad */
+.campo-formulario label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1E1E24; /* Color principal oscuro */
+    font-size: 0.9rem;
+}
+
+/* Estilización e internalización uniforme de los inputs y textareas */
+.campo-formulario input,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    border: 1px solid #3A3D40; /* Color secundario medio como borde base */
+    background-color: #FFFFFF; /* Color claro 2 */
+    border-radius: 4px;
+    transition: border-color 0.3s ease, outline 0.3s ease;
+}
+
+/* Resaltado cromático cuando el usuario interactúa activamente con el campo */
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+    border-color: #FF5A5F; /* Borde se transforma al color de acento llamativo */
+}
+
+/* Forzar bloqueo de redimensionamiento horizontal no controlado en el textarea */
+.campo-formulario textarea {
+    resize: vertical;
+}
+
+/* Botón de envío nativo del formulario */
+.boton-formulario {
+    width: 100%;
+    background-color: #FF5A5F; /* Color de acento llamativo */
+    color: #FFFFFF; /* Color claro 2 */
+    padding: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-formulario:hover {
+    background-color: #1E1E24; /* Cambia a color principal oscuro */
+}
+
+/* ==========================================================================
+   8. FOOTER (PIE DE PÁGINA)
+   ========================================================================== */
+
+/* Cierre simétrico empleando el color institucional profundo */
+.sitio-footer {
+    background-color: #1E1E24; /* Color principal oscuro */
+    color: #FFFFFF; /* Color claro 2 */
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+/* Distribución horizontal simétrica del copyright y las redes sociales */
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Alineación en fila para el bloque de enlaces sociales */
+.redes-sociales {
+    display: flex;
+    gap: 20px;
+}
+
+.redes-sociales a {
+    color: #FFFFFF; /* Color claro 2 */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Destello del color de acento al interactuar con las redes */
+.redes-sociales a:hover {
+    color: #FF5A5F; /* Color de acento llamativo */
+}
+
+/* ==========================================================================
+   6. SECCIÓN HABILIDADES (NUEVO DISEÑO EN BARRAS)
+   ========================================================================== */
+
+/* Alternancia de color a un tono gris sutil para el fondo de la sección */
+.seccion-habilidades {
+    background-color: #F5F7FA; /* Color claro 1 */
+}
+
+/* Distribución horizontal equidistante para exactamente cuatro columnas de habilidades */
+.habilidades-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+/* Cada bloque individual de habilidad se expande proporcionalmente en la fila */
+.bloque-habilidad {
+    flex: 1;
+    background-color: #FFFFFF; /* Color claro 2 para resaltar las barras */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Contenedor flexible para alinear el nombre y el número a los extremos opuestos */
+.habilidad-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #1E1E24; /* Color principal oscuro */
+    font-size: 0.95rem;
+}
+
+/* El porcentaje utiliza el color de acento para capturar la atención visual */
+.habilidad-porcentaje {
+    color: #FF5A5F; /* Color de acento llamativo */
+}
+
+/* Carril gris de fondo que representa el 100% de la capacidad */
+.barra-contenedor {
+    width: 100%;
+    height: 10px;
+    background-color: #E2E8F0; /* Gris muy claro de fondo */
+    border-radius: 5px;
+    overflow: hidden; /* Asegura que la barra interna no se salga de las esquinas redondeadas */
+}
+
+/* La barra de relleno real que representa el porcentaje alcanzado */
+.barra-progreso {
+    height: 100%;
+    background-color: #FF5A5F; /* Color de acento llamativo */
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transición fluida para interactividad */
+}
+
+/* Efecto hover: Al posarse sobre el bloque, la barra se vuelve más oscura e intensa */
+.bloque-habilidad:hover .barra-progreso {
+    background-color: #1E1E24; /* Cambia temporalmente al color principal oscuro */
+    transform: scaleY(1.2); /* Crece sutilmente a lo alto para dar sensación interactiva */
+}
+
+/* ==========================================================================
+   8. FOOTER (PIE DE PÁGINA CON ÍCONOS REESTILIZADOS)
+   ========================================================================== */
+
+/* Cierre simétrico empleando el color institucional profundo */
+.sitio-footer {
+    background-color: #1E1E24; /* Color principal oscuro */
+    color: #FFFFFF; /* Color claro 2 */
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+
+/* Distribución horizontal simétrica del copyright y las redes sociales */
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Alineación en fila para el bloque de enlaces sociales */
+.redes-sociales {
+    display: flex;
+    gap: 25px; /* Espaciado generoso entre íconos */
+}
+
+/* Estilo para los contenedores de los íconos */
+.redes-sociales a {
+    color: #FFFFFF; /* Color claro 2 por defecto */
+    font-size: 1.5rem; /* Tamaño optimizado para visualización e interacción */
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición para color y tamaño */
+}
+
+/* Efecto hover general: los íconos cambian al color de acento y suben ligeramente */
+.redes-sociales a:hover {
+    color: #FF5A5F; /* Color de acento llamativo */
+    transform: translateY(-3px); /* Efecto dinámico de elevación */
+}
+
+/* Regla específica para el hover del ícono de WhatsApp */
+.redes-sociales .enlace-whatsapp:hover {
+    color: #25D366; /* Verde oficial de marca WhatsApp para coherencia de identidad */
+}
